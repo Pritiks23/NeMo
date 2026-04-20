@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 
+
 def check_line_length(path, max_length=119):
     """
     Checks if any line in the file at `path` exceeds `max_length` characters.
@@ -12,6 +13,7 @@ def check_line_length(path, max_length=119):
             if len(line.rstrip('\n')) > max_length:
                 offending.append((i, line.rstrip('\n')))
     return offending
+
 
 def main():
     if len(sys.argv) < 2:
@@ -37,6 +39,7 @@ def main():
                 print(f"  Line {line_num}: {content}")
     if not any_offending:
         print("All lines within limit.")
+
 
 if __name__ == "__main__":
     main()
